@@ -1,0 +1,51 @@
+#task 1
+
+def calculate_average(grades):
+    if not grades:
+        return "No grades available."
+    else:
+        total = sum(grades)
+        average = total / len(grades)
+        return average
+
+# Example usage:
+grades = [85, 90, 92, 88, 95]
+average_grade = calculate_average(grades)
+print("Average grade:", average_grade)
+
+
+#task 2
+
+def find_highest_lowest(grades):
+    if not grades:
+        return "No grades available."
+    else:
+        highest_grade = max(grades)
+        lowest_grade = min(grades)
+        return highest_grade, lowest_grade
+
+# Example usage:
+grades = [85, 90, 92, 88, 95]
+highest_grade, lowest_grade = find_highest_lowest(grades)
+print("Highest grade:", highest_grade)
+print("Lowest grade:", lowest_grade)
+
+
+#task 3
+
+def calculate_letter_grade(grade):
+    if grade >= 90:
+        return 'A'
+    elif grade >= 80:
+        return 'B'
+    elif grade >= 70:
+        return 'C'
+    elif grade >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+# Example usage:
+grades = [85, 90, 92, 88, 95]
+letter_grades = [calculate_letter_grade(grade) for grade in grades]
+print("Letter grades:", letter_grades)

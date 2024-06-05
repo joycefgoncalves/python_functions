@@ -1,0 +1,105 @@
+#task 1
+
+# Define a list of questions and corresponding answers
+questions = [
+    "What is the capital of France?",
+    "How many states has in United States",
+    "What is the chemical symbol for water?",
+    ]
+
+answers = [
+    "Paris",
+    "50 states",
+    "H2O",
+]
+
+# Combine questions and answers into a list of tuples
+quiz = list(zip(questions, answers))
+
+# Example usage:
+for question, answer in quiz:
+    user_answer = input(question + " ")
+    if user_answer.lower() == answer.lower():
+        print("Correct!")
+    else:
+        print("Incorrect. The correct answer is:", answer)
+
+
+#task 2
+
+def quiz_user(questions, answers):
+    score = 0
+    total_questions = len(questions)
+
+    for question, answer in zip(questions, answers):
+        user_answer = input(question + " ")
+        if user_answer.lower() == answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print("Incorrect. The correct answer is:", answer)
+
+    print("\nQuiz completed!")
+    print("Your score:", score, "out of", total_questions)
+
+# Example usage:
+questions = [
+    "What is the capital of France?",
+    "How many states has in United States",
+    "What is the chemical symbol for water?",
+    ]
+answers = [
+    "Paris",
+    "50 states",
+    "H2O",
+]
+
+quiz_user(questions, answers)
+
+
+#task 3
+
+def quiz_user(questions, answers):
+    score = 0
+    total_questions = len(questions)
+
+    for question, answer in zip(questions, answers):
+        user_answer = input(question + " ")
+        if user_answer.lower() == answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print("Incorrect. The correct answer is:", answer)
+
+    print("\nQuiz completed!")
+    print("Your score:", score, "out of", total_questions)
+
+    # Calculate the percentage score
+    percentage = (score / total_questions) * 100
+
+    # Provide feedback based on the percentage score
+    if percentage >= 90:
+        print("Excellent! You scored an A.")
+    elif percentage >= 80:
+        print("Great job! You scored a B.")
+    elif percentage >= 70:
+        print("Good effort! You scored a C.")
+    elif percentage >= 60:
+        print("You passed, but there's room for improvement. You scored a D.")
+    else:
+        print("Sorry, you did not pass the quiz. Better luck next time!")
+
+# Example usage:
+questions = [
+    "What is the capital of France?",
+    "How many states has in United States",
+    "What is the chemical symbol for water?",
+    ]
+
+answers = [
+    "Paris",
+    "50 states",
+    "H2O",
+]
+
+quiz_user(questions, answers)

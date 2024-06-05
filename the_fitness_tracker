@@ -1,0 +1,47 @@
+#task 1
+
+def log_fitness_activities(activities, durations):
+    if len(activities) != len(durations):
+        print("Error: Number of activities and durations must be the same.")
+        return
+
+    fitness_log = {}
+    for activity, duration in zip(activities, durations):
+        fitness_log[activity] = duration
+
+    return fitness_log
+
+# Example usage:
+activities = ['Dancing', 'Swimming', 'Biking']
+durations = [10, 20, 15]
+fitness_log = log_fitness_activities(activities, durations)
+print("Fitness Log:", fitness_log)
+
+
+#task 2
+
+def estimate_calories_burned(duration):
+    return duration * 3.5
+
+# Example usage:
+duration = 30  # in minutes
+calories_burned = estimate_calories_burned(duration)
+print("Estimated calories burned:", calories_burned)
+
+
+#task 3
+
+def generate_summary(fitness_log):
+    total_calories_burned = sum(duration * 3.5 for duration in fitness_log.values())
+
+    summary = "Fitness Activities Summary:\n"
+    for activity, duration in fitness_log.items():
+        summary += f"- {activity}: {duration} minutes\n"
+    summary += f"\nTotal Calories Burned: {total_calories_burned} calories"
+
+    return summary
+
+# Example usage:
+fitness_log = {'Dancing': 10, 'Swimming': 20, 'Biking': 15}
+summary = generate_summary(fitness_log)
+print(summary)
